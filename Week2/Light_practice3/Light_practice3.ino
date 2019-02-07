@@ -21,14 +21,14 @@ void loop() {
   // put your main code here, to run repeatedly:
   analogValue = analogRead (lightSensorPin);
   Serial.println(analogValue);
-  if(analogValue<300){
+  if(analogValue<600){
     digitalWrite(yellowLedPin, HIGH);
     digitalWrite(blueLedPin, HIGH);
     
   }
  
 
-   if (blueLedPin == HIGH){
+   if (analogValue>400){
     digitalWrite(blueLedPin, HIGH);
     }
 
