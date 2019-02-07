@@ -1,4 +1,5 @@
-  
+/* the yellow led work, the blue light doesn't work*/  
+
 int yellowLedPin = 11;
 int blueLedPin = 10;
 
