@@ -15,6 +15,15 @@ void setup() {
   pinMode(yellowLedPin, OUTPUT);
   pinMode(blueLedPin, OUTPUT);
 
+  digitalWrite(yellowLedPin, HIGH);
+  delay(200);
+  digitalWrite(yellowLedPin, LOW);
+  
+  digitalWrite(blueLedPin, HIGH);
+  delay(200);
+  digitalWrite(blueLedPin, LOW);
+    
+
 
 }
 
@@ -22,14 +31,13 @@ void loop() {
   // put your main code here, to run repeatedly:
   analogValue = analogRead (lightSensorPin);
   Serial.println(analogValue);
-  if(analogValue<600){
+  if(analogValue<=800){
     digitalWrite(yellowLedPin, HIGH);
-    digitalWrite(blueLedPin, HIGH);
     
   }
  
 
-   if (analogValue>400){
+   else{
     digitalWrite(blueLedPin, HIGH);
     }
 
