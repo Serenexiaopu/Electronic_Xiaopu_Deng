@@ -5,6 +5,7 @@ const int ledPin = 10;//the led attach to
 int digitalVal;
 void setup()
 { 
+  Serial.begin(9600);
   pinMode(ledPin,OUTPUT);//initialize the ledPin as an output
   pinMode(2,INPUT);
   digitalWrite(2, HIGH);
