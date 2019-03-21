@@ -12,7 +12,7 @@
 
 //sound+vibrate
 int  sensorAnalogPin = A0;    // Select the Arduino input pin to accept the Sound Sensor's analog output 
-int  sensorDigitalPin = 7;    // Select the Arduino input pin to accept the Sound Sensor's digital output
+//int  sensorDigitalPin = 7;    // Select the Arduino input pin to accept the Sound Sensor's digital output
 int  analogValue = 0;         // Define variable to store the analog value coming from the Sound Sensor
 int  realValue;
 int  digitalValue;            // Define variable to store the digital value coming from the Sound Sensor
@@ -28,13 +28,13 @@ int digitalVal;
 void setup()
 {
   Serial.begin(9600);               // The IDE settings for Serial Monitor/Plotter (preferred) must match this speed
-  pinMode(sensorDigitalPin,INPUT);  // Define pin 7 as an input port, to accept digital input
+  pinMode(sensorAnalogPin,INPUT);  // Define pin 7 as an input port, to accept digital input
   pinMode(BallSwitchPin,INPUT);
   
   pinMode(vib13,OUTPUT);  
   pinMode(ledPin,OUTPUT);//initialize the ledPin as an output
 
-  digitalWrite(sensorDigitalPin, HIGH);
+  digitalWrite(sensorAnalogPin, HIGH);
   digitalWrite(BallSwitchPin, HIGH);
   
   
@@ -52,7 +52,7 @@ void loop(){
 
  
  
-  if(analogValue>=4000)      // When the Sound Sensor sends signla, via voltage present, light LED13 (L)
+  if(analogValue>=3000)      // When the Sound Sensor sends signla, via voltage present, light LED13 (L)
   {
     digitalWrite(vib13,HIGH);
     delay(100);
